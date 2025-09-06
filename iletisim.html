@@ -6,6 +6,7 @@
   <title>İletişim | MR.Ayberk.Yozkat</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Arkaplan (siyah-beyaz kurumsal) */
     body {
       background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       position: relative;
@@ -19,22 +20,15 @@
       background: rgba(0,0,0,0.7);
       z-index: 0;
     }
-    main {
-      position: relative;
-      z-index: 1;
-      padding: 80px 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+    main { position: relative; z-index: 1; padding: 80px 20px; }
+    h1 { text-align: center; margin-bottom: 40px; font-size: 36px; font-weight: 700; letter-spacing: 1px; }
+
+    /* Kart ızgarası */
     .contact-grid {
       display: grid;
       gap: 24px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-bottom: 28px;
     }
     .contact-card {
       background: rgba(255,255,255,0.1);
@@ -45,33 +39,58 @@
       border: 1px solid rgba(255,255,255,0.2);
       transition: transform .2s ease, box-shadow .2s ease;
     }
-    .contact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    }
-    .contact-card h3 {
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
+    .contact-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+    .contact-card h3 { margin-bottom: 12px; font-size: 22px; }
+
+    /* Butonlar + mikro animasyonlar */
     .contact-card a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-top: 10px;
       padding: 10px 20px;
       border-radius: 8px;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: opacity .2s ease;
+      transition: transform .2s ease, opacity .2s ease;
+      will-change: transform;
     }
-    .contact-card a:hover { opacity: 0.85; }
+    .contact-card a:hover { opacity: 0.9; transform: translateY(-2px); }
+    .contact-card a .icon {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
+    /* Mikro animasyon: hover'da ikon hafif hareket etsin */
+    .contact-card a:hover .icon--nudge { transform: translateX(4px); }      /* e-posta/LinkedIn */
+    .contact-card a:hover .icon--bounce { transform: translateY(-3px); }    /* WhatsApp */
+    .contact-card a:hover .icon--tilt   { transform: rotate(-8deg); }       /* Instagram */
 
-    /* Özel buton renkleri */
-    .btn-email { background: #0ea5e9; } /* mavi */
+    /* Marka renkleri */
+    .btn-email    { background: #0ea5e9; } /* mavi */
     .btn-whatsapp { background: #25D366; } /* WhatsApp yeşili */
-    .btn-instagram {
-      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    .btn-instagram{
+      background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
     }
     .btn-linkedin { background: #0077b5; } /* LinkedIn mavi */
+
+    /* Çalışma saatleri bloğu */
+    .hours {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+      padding: 22px;
+      border-radius: 16px;
+    }
+    .hours h3 { margin-bottom: 10px; font-size: 20px; }
+    .hours-list {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 16px;
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+    .hours-note { margin-top: 10px; font-size: 13px; color: #cbd5e1; }
   </style>
 </head>
 <body>
@@ -94,31 +113,53 @@
 <main>
   <div class="container">
     <h1>Bize Ulaşın</h1>
+
+    <!-- İletişim kartları -->
     <div class="contact-grid">
 
       <!-- E-Posta -->
       <div class="contact-card">
         <h3>📧 E-Posta</h3>
         <p>Doğrudan bize yazabilirsiniz.</p>
-        <a href="mailto:a.yozkat44@gmail.com" class="btn-email">E-posta Gönder</a>
+        <a href="mailto:a.yozkat44@gmail.com" class="btn-email" aria-label="E-posta gönder">
+          E-posta Gönder <span class="icon icon--nudge">→</span>
+        </a>
       </div>
 
       <!-- WhatsApp -->
       <div class="contact-card">
         <h3>💬 WhatsApp</h3>
         <p>Hızlıca mesaj atın.</p>
-        <a href="https://wa.me/905515069117" target="_blank" class="btn-whatsapp">WhatsApp'tan Yaz</a>
+        <a href="https://wa.me/905515069117" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="WhatsApp'tan yaz">
+          WhatsApp’tan Yaz <span class="icon icon--bounce">💬</span>
+        </a>
       </div>
 
       <!-- Sosyal Medya -->
       <div class="contact-card">
         <h3>🌐 Sosyal Medya</h3>
         <p>Bizi takip edin.</p>
-        <a href="https://www.instagram.com/ayberk_yozkat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-instagram">📷 Instagram</a>
-        <a href="https://www.linkedin.com/feed/?trk=hb_signin" target="_blank" class="btn-linkedin" style="margin-left:8px">💼 LinkedIn</a>
+        <a href="https://www.instagram.com/ayberk_yozkat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="btn-instagram" aria-label="Instagram">
+          Instagram <span class="icon icon--tilt">📷</span>
+        </a>
+        <a href="https://www.linkedin.com/feed/?trk=hb_signin" target="_blank" rel="noopener" class="btn-linkedin" style="margin-left:8px" aria-label="LinkedIn">
+          LinkedIn <span class="icon icon--nudge">↗</span>
+        </a>
       </div>
 
     </div>
+
+    <!-- Çalışma saatleri (kurumsallık) -->
+    <div class="hours" aria-label="Çalışma Saatleri">
+      <h3>Çalışma Saatleri</h3>
+      <div class="hours-list">
+        <span>Pazartesi – Cuma</span> <span>09:00 – 18:00</span>
+        <span>Cumartesi</span>        <span>10:00 – 16:00</span>
+        <span>Pazar</span>            <span>Kapalı</span>
+      </div>
+      <p class="hours-note">Mesajlar genellikle aynı gün içerisinde yanıtlanır. Acil durumlar için WhatsApp’ı tercih edin.</p>
+    </div>
+
   </div>
 </main>
 
