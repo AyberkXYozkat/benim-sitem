@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hizmetler | MR.Ayberk.Yozkat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Menü -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">MR.Ayberk.Yozkat</a>
+    <nav class="menu">
+      <a href="isler.html">İşler</a>
+      <a href="hakkinda.html">Hakkımda</a>
+      <a href="hizmetler.html">Hizmetler</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="kvkk.html">KVKK / Gizlilik</a>
+    </nav>
+  </div>
+</header>
+
+<!-- İçerik -->
+<main class="section">
+  <div class="container">
+    <h1>Hizmetler & Paketler</h1>
+    <p class="muted">Yaptığım işleri tek tek alabilir ya da avantajlı paketlerden faydalanabilirsiniz.</p>
+
+    <!-- Tek Tek Hizmetler -->
+    <h2>Tek Tek Hizmetler</h2>
+    <div class="grid" style="margin-top:16px">
+      <div class="card"><div class="pad"><strong>Logo Tasarımı</strong><p class="muted">₺500</p></div></div>
+      <div class="card"><div class="pad"><strong>Afiş & Broşür</strong><p class="muted">₺300</p></div></div>
+      <div class="card"><div class="pad"><strong>Kartvizit Tasarımı</strong><p class="muted">₺200</p></div></div>
+      <div class="card"><div class="pad"><strong>Web Sitesi Tasarımı</strong><p class="muted">₺1.500</p></div></div>
+      <div class="card"><div class="pad"><strong>Ürün Etiketi</strong><p class="muted">₺250</p></div></div>
+      <div class="card"><div class="pad"><strong>Photoshop Çalışmaları</strong><p class="muted">₺150</p></div></div>
+    </div>
+
+    <!-- Paketler -->
+    <h2 style="margin-top:40px">Avantajlı Paketler</h2>
+    <div class="grid" style="margin-top:16px">
+      <div class="card">
+        <div class="pad">
+          <strong>Başlangıç Paketi</strong>
+          <p class="muted">Logo + Kartvizit</p>
+          <p><b>₺600</b></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <strong>Standart Paket</strong>
+          <p class="muted">Logo + Kartvizit + Broşür</p>
+          <p><b>₺900</b></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <strong>Pro Paket</strong>
+          <p class="muted">Logo + Web Sitesi + 2 Afiş</p>
+          <p><b>₺2.000</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <small class="muted">© <span id="yil"></span> MR.Ayberk.Yozkat</small>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yil').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

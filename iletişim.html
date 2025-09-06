@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İletişim | MR.Ayberk.Yozkat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Menü -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">MR.Ayberk.Yozkat</a>
+    <nav class="menu">
+      <a href="isler.html">İşler</a>
+      <a href="hakkinda.html">Hakkımda</a>
+      <a href="hizmetler.html">Hizmetler</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="kvkk.html">KVKK / Gizlilik</a>
+    </nav>
+  </div>
+</header>
+
+<!-- İçerik -->
+<main class="section">
+  <div class="container">
+    <h1>İletişim</h1>
+    <p class="muted">Aşağıdaki form üzerinden bana ulaşabilir veya telefon/e-posta ile iletişime geçebilirsiniz.</p>
+
+    <!-- Form -->
+    <form action="mailto:a.yozkat44@gmail.com" method="POST" enctype="text/plain" class="card" style="max-width:680px;margin-top:16px">
+      <div class="pad">
+        <label>Kategori:
+          <select name="Kategori" required>
+            <option value="">Seçiniz</option>
+            <option>Logo Tasarım</option>
+            <option>Afiş / Broşür</option>
+            <option>Kartvizit</option>
+            <option>Web Sitesi</option>
+            <option>Photoshop Çalışmaları</option>
+            <option>Ürün Etiketi</option>
+            <option>Diğer</option>
+          </select>
+        </label><br><br>
+
+        <label>Proje Başlığı:
+          <input type="text" name="Proje Başlığı" required>
+        </label><br><br>
+
+        <label>Proje Açıklaması:
+          <textarea name="Proje Açıklaması" rows="5" required></textarea>
+        </label><br><br>
+
+        <label>Ad Soyad:
+          <input type="text" name="Ad Soyad" required>
+        </label><br><br>
+
+        <label>E-posta:
+          <input type="email" name="Email" required>
+        </label><br><br>
+
+        <label>Telefon:
+          <input type="text" name="Telefon" value="0551 506 91 17">
+        </label><br><br>
+
+        <button type="submit">Gönder</button>
+      </div>
+    </form>
+
+    <!-- Telefon & Mail -->
+    <div style="margin-top:32px">
+      <p><b>Telefon:</b> 0551 506 91 17</p>
+      <p><b>E-posta:</b> <a href="mailto:a.yozkat44@gmail.com">a.yozkat44@gmail.com</a></p>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <small class="muted">© <span id="yil"></span> MR.Ayberk.Yozkat</small>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yil').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

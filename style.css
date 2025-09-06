@@ -1,0 +1,57 @@
+/* Fontlar */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root{
+  --emerald:#10b981;
+  --emerald-deep:#065f46;
+  --ink:#0b1220;
+  --muted:#64748b;
+  --line:#e5e7eb;
+  --paper:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  line-height:1.6;
+}
+
+/* Genel düzen */
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.section{padding:48px 0}
+
+/* Header / Nav */
+.nav{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+.nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;color:var(--emerald-deep);text-decoration:none}
+.menu a{margin-left:24px;text-decoration:none;color:#334155;font-weight:600}
+.menu a:hover{color:var(--emerald-deep)}
+
+/* Hero */
+.hero{padding:72px 0;background:linear-gradient(180deg,#ecfeff 0%,#fff 100%)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:48px;line-height:1.1;margin:0 0 10px;color:var(--emerald-deep)}
+.hero p{max-width:680px;color:#334155;margin:0 0 18px}
+.btn{display:inline-block;padding:12px 18px;border-radius:14px;border:2px solid var(--emerald-deep);font-weight:700;text-decoration:none}
+.btn-primary{background:var(--emerald-deep);color:#fff;border-color:var(--emerald-deep)}
+.btn-ghost{color:var(--emerald-deep);background:#fff}
+
+/* Grid & Cards */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 6px #0001}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card .pad{padding:14px}
+
+/* Typography */
+h1,h2,h3{font-family:'Cormorant Garamond',serif;margin-bottom:12px;color:var(--emerald-deep)}
+.muted{color:var(--muted)}
+
+/* Formlar */
+input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px;font-size:15px}
+button{padding:12px 16px;border-radius:14px;border:0;background:var(--emerald-deep);color:#fff;font-weight:800;cursor:pointer}
+button:hover{opacity:.95}
+
+/* Footer */
+footer{border-top:1px solid var(--line);background:#fff;padding:22px 0;margin-top:20px;text-align:center}
+footer .muted{font-size:14px}

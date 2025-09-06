@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İşler | MR.Ayberk.Yozkat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Menü -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">MR.Ayberk.Yozkat</a>
+    <nav class="menu">
+      <a href="isler.html">İşler</a>
+      <a href="hakkinda.html">Hakkımda</a>
+      <a href="hizmetler.html">Hizmetler</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="kvkk.html">KVKK / Gizlilik</a>
+    </nav>
+  </div>
+</header>
+
+<!-- İçerik -->
+<main class="section">
+  <div class="container">
+    <h1>Çalışmalarım</h1>
+    <p class="muted">Aşağıda yaptığım işlerin kategorilerini ve örnek görselleri bulabilirsiniz.</p>
+
+    <div class="grid" style="margin-top:16px">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1581291518835-1f91c4a6a9d9?auto=format&fit=crop&w=800&q=80" alt="Logo Tasarım">
+        <div class="pad">
+          <strong>Logo Tasarım</strong>
+          <p class="muted">Markalara özel, modern logolar.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155223f3e0?auto=format&fit=crop&w=800&q=80" alt="Afiş & Broşür">
+        <div class="pad">
+          <strong>Afiş & Broşür</strong>
+          <p class="muted">Tanıtım ve duyuru materyalleri.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Web Sitesi">
+        <div class="pad">
+          <strong>Web Tasarım</strong>
+          <p class="muted">Modern ve mobil uyumlu siteler.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80" alt="Photoshop">
+        <div class="pad">
+          <strong>Photoshop Çalışmaları</strong>
+          <p class="muted">Arka plan kaldırma, renk düzenleme.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <small class="muted">© <span id="yil"></span> MR.Ayberk.Yozkat</small>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yil').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
