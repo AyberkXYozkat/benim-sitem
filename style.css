@@ -1,6 +1,7 @@
 /* Fontlar */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 
+/* Renk paleti */
 :root{
   --emerald:#10b981;
   --emerald-deep:#065f46;
@@ -10,7 +11,12 @@
   --paper:#fff;
 }
 
+/* Reset */
 *{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+
+/* Temel */
 body{
   background:var(--paper);
   color:var(--ink);
@@ -18,40 +24,79 @@ body{
   line-height:1.6;
 }
 
-/* Genel düzen */
+/* Konteyner & Bölüm */
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
 .section{padding:48px 0}
 
-/* Header / Nav */
-.nav{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
-.nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:800;color:var(--emerald-deep);text-decoration:none}
-.menu a{margin-left:24px;text-decoration:none;color:#334155;font-weight:600}
-.menu a:hover{color:var(--emerald-deep)}
+/* ============ CAM EFEKTLİ MENÜ (GLASS) ============ */
+header.nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  padding:12px 0;
+}
+.nav-inner{height:56px;display:flex;align-items:center;justify-content:space-between}
+header.nav .brand{
+  font-weight:800;font-size:20px;
+  color:#0f172a; /* koyu yazı */
+}
+header.nav .menu a{
+  margin-left:20px;
+  color:#334155; /* normal durumda koyu gri */
+  font-weight:600;
+}
+header.nav .menu a:hover{color:var(--emerald-deep)}
+/* Koyu görseller üstünde de okunabilir olsun diye açık temalı alternatif */
+body.has-dark-hero header.nav{
+  background:rgba(17,24,39,0.35);
+  border-bottom:1px solid rgba(255,255,255,0.18);
+}
+body.has-dark-hero header.nav .brand{color:#fff}
+body.has-dark-hero header.nav .menu a{color:#e5e7eb}
+body.has-dark-hero header.nav .menu a:hover{color:var(--emerald)}
 
 /* Hero */
 .hero{padding:72px 0;background:linear-gradient(180deg,#ecfeff 0%,#fff 100%)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:48px;line-height:1.1;margin:0 0 10px;color:var(--emerald-deep)}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;line-height:1.1;margin:0 0 10px;color:var(--emerald-deep)
+}
 .hero p{max-width:680px;color:#334155;margin:0 0 18px}
-.btn{display:inline-block;padding:12px 18px;border-radius:14px;border:2px solid var(--emerald-deep);font-weight:700;text-decoration:none}
+
+/* Butonlar */
+.btn{display:inline-block;padding:12px 18px;border-radius:14px;border:2px solid var(--emerald-deep);font-weight:700}
 .btn-primary{background:var(--emerald-deep);color:#fff;border-color:var(--emerald-deep)}
 .btn-ghost{color:var(--emerald-deep);background:#fff}
 
-/* Grid & Cards */
+/* Grid & Kartlar */
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 6px #0001}
-.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card img{width:100%;height:180px;object-fit:cover}
 .card .pad{padding:14px}
 
-/* Typography */
+/* Tipografi */
 h1,h2,h3{font-family:'Cormorant Garamond',serif;margin-bottom:12px;color:var(--emerald-deep)}
 .muted{color:var(--muted)}
 
 /* Formlar */
-input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px;font-size:15px}
+input,textarea,select{
+  width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px;font-size:15px;background:#fff;color:#0f172a
+}
 button{padding:12px 16px;border-radius:14px;border:0;background:var(--emerald-deep);color:#fff;font-weight:800;cursor:pointer}
 button:hover{opacity:.95}
 
 /* Footer */
 footer{border-top:1px solid var(--line);background:#fff;padding:22px 0;margin-top:20px;text-align:center}
 footer .muted{font-size:14px}
+
+/* Responsive ufak dokunuşlar */
+@media (max-width:640px){
+  .hero h1{font-size:36px}
+  .nav-inner{height:auto}
+  header.nav .menu a{margin-left:14px}
+}
+
+/* Yardımcı: koyu görsel üstünde menüyü açık renge geçirmek için
+   <body class="has-dark-hero"> ekleyebilirsin (iletisim.html'de var). */
